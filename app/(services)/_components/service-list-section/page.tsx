@@ -22,16 +22,6 @@ const ServiceListSection = () => {
           link="order-medicine"
         />
         <ServiceCard
-          title="Book Hospital"
-          icon={hospital}
-          link="book-hospital"
-        />
-        <ServiceCard
-          title="Medical Products"
-          icon={mProduct}
-          link="medical-product"
-        />
-        <ServiceCard
           title="Donate or Get Blood"
           icon={blood}
           link="donate-or-get-blood"
@@ -42,7 +32,16 @@ const ServiceListSection = () => {
           icon={amb}
           link="sample-collection"
         />
-        <ServiceCard title="Ambulance" icon={amb} />
+        <ServiceCard
+          title="Book Hospital"
+          icon={hospital}
+          link="book-hospital"
+        />
+        <ServiceCard
+          title="Medical Products"
+          icon={mProduct}
+          link="medical-product"
+        />
       </div>
     </div>
   );
