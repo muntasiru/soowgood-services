@@ -2,8 +2,12 @@ import Container from "@/components/layout/container";
 import ServiceListSection from "./_components/service-list-section/page";
 import { Card } from "@/components/ui/card";
 import SearchSection from "./_components/search-section";
+import { platform } from "os";
+import { getplatformList } from "../api/services";
+import { PlatformFacilitiModel } from "./_models/platform-model";
 
-export default function ServiceHome() {
+export default async function ServiceHome() {
+  let platform = await getplatformList();
   return (
     <div className="min-h-screen">
       <Container>
@@ -18,7 +22,7 @@ export default function ServiceHome() {
           </h1>
 
           <Card className=" bg-transparent border-none shadow-none  mt-7">
-            <ServiceListSection />
+            <ServiceListSection platform={platform} />
           </Card>
         </>
       </Container>

@@ -1,6 +1,5 @@
 import { Ambulance, ArrowRight } from "lucide-react";
 import PageHeader from "../../_components/page-header";
-import { NextScript } from "next/document";
 
 const ServiceLayout = ({
   children,
