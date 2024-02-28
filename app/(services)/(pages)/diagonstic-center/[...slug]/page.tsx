@@ -1,7 +1,7 @@
+"use client";
 import PageHeader from "@/app/(services)/_components/page-header";
 import Container from "@/components/layout/container";
 import { Card, CardContent } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import { ArrowRight } from "lucide-react";
 import HospitalSpecificationTab from "./hospital-specification-tab";
 
