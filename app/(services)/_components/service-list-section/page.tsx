@@ -5,8 +5,6 @@ import medicine from "../../../assets/service/medicine.webp";
 import diagnostic from "../../../assets/service/diagn.webp";
 import mProduct from "../../../assets/service/product.webp";
 import blood from "../../../assets/service/donate.jpg";
-import { useEffect, useState } from "react";
-import { getplatformList } from "@/app/api/services";
 import { PlatformFacilitiModel } from "../../_models/platform-model";
 
 const ServiceListSection = async ({ platform }: any) => {
