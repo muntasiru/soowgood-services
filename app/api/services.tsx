@@ -1,4 +1,4 @@
-const apiUrl = "https://localhost:44339/api/app";
+const apiUrl = "https://soowgoodbeta.com/api/app";
 
 export const getplatformList = async () => {
   const response = await fetch(`${apiUrl}/platform-facility`, {
