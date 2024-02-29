@@ -7,7 +7,6 @@ import {
   TableProperties,
   WorkflowIcon,
 } from "lucide-react";
-import PageHeader from "../../_components/page-header";
 import HospitalCard from "./hospital-card";
 import Container from "@/components/layout/container";
 import { Card, CardHeader } from "@/components/ui/card";
@@ -15,6 +14,7 @@ import { Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import { getDiagnosticCenterListByFacilitySlug } from "@/app/api/services";
 import { DiagnosticCenterModel } from "../../_models/platform-model";
+import PageHeader from "../../_components/page-header";
 
 const Page = async () => {
   const diagnosticCenterList = await getDiagnosticCenterListByFacilitySlug(

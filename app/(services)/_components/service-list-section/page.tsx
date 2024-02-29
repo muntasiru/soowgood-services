@@ -1,4 +1,3 @@
-import ServiceCard from "./service-card";
 import amb from "../../../assets/service/ambulance.webp";
 import hospital from "../../../assets/service/hospital.webp";
 import medicine from "../../../assets/service/medicine.webp";
@@ -6,6 +5,7 @@ import diagnostic from "../../../assets/service/diagn.webp";
 import mProduct from "../../../assets/service/product.webp";
 import blood from "../../../assets/service/donate.jpg";
 import { PlatformFacilitiModel } from "../../_models/platform-model";
+import ServiceCard from "./service-card";
 
 const ServiceListSection = async ({ platform }: any) => {
   return (
