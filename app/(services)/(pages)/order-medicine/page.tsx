@@ -39,16 +39,9 @@ const OrderMedicine = () => {
                 type="file"
               />
             </div>
-
-            <div className="flex items-center gap-4">
-              <Checkbox id="all" />
-              <Label className="text-sm" htmlFor="all">
-                Order all medicines mentioned in the prescription
-              </Label>
-            </div>
           </div>
           <fieldset className="border p-4 rounded-lg bg-gray-50 dark:bg-gray-800">
-            <legend className="text-sm font-semibold">Address</legend>
+            <legend className="text-sm font-semibold px-2">Address</legend>
             <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3">
               <div className="grid gap-2">
                 <Label className="text-sm" htmlFor="name">

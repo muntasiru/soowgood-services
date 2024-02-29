@@ -17,11 +17,11 @@ export default async function ServiceHome() {
               <SearchSection />
             </div>
           </div>
-          <h1 className=" text-[32px] text-primary font-bold mt-5 text-center">
+          {/* <h1 className=" text-[32px] text-primary font-bold my-10 text-center">
             <span className=" text-secondary">Soowgood</span> Services
-          </h1>
+          </h1> */}
 
-          <Card className=" bg-transparent border-none shadow-none  mt-7">
+          <Card className=" bg-transparent border-none  shadow-none my-10">
             <ServiceListSection platform={platform} />
           </Card>
         </>

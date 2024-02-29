@@ -13,10 +13,27 @@ import Container from "@/components/layout/container";
 import { Card, CardHeader } from "@/components/ui/card";
 import { Suspense } from "react";
 import { Button } from "@/components/ui/button";
+import { getDiagnosticCenterListByFacilitySlug } from "@/app/api/services";
+import { DiagnosticCenterModel } from "../../_models/platform-model";
 
-const Page = () => {
+const Page = async () => {
+  const diagnosticCenterList = await getDiagnosticCenterListByFacilitySlug(
+    "diagonstic-center"
+  );
   return (
     <div className=" bg-slate-100">
+      <PageHeader>
+        <div className="text-center ">
+          <h1 className=" text-[32px] font-bold text-primary drop-shadow-md">
+            Diagnostic Center
+          </h1>
+          <span className="flex gap-1 items-center justify-center text-primary/80">
+            Service
+            <ArrowRight size={15} className="mt-1" />
+            Diagnostic center
+          </span>
+        </div>
+      </PageHeader>
       <div className="pt-5 pb-10">
         <Container>
           <Card className=" sticky top-0 z-50 rounded-md overflow-hidden shadow-md ">
@@ -52,12 +69,9 @@ const Page = () => {
             </CardHeader>
           </Card>
           <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-6 mt-5">
-            <HospitalCard />
-            <HospitalCard />
-            <HospitalCard />
-            <HospitalCard />
-            <HospitalCard />
-            <HospitalCard />
+            {diagnosticCenterList?.map((res: DiagnosticCenterModel) => (
+              <HospitalCard key={res.id} details={res} />
+            ))}
           </div>
         </Container>
       </div>

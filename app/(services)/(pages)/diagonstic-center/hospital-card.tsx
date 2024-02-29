@@ -4,8 +4,12 @@ import hospital from "../../../assets/service/hospital-1.png";
 import Image from "next/image";
 import RequestTestModal from "./request-test-modal";
 import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-const HospitalCard = () => {
+const HospitalCard = ({ details }: any) => {
+  const pathname = usePathname();
+
   const [open, setOpen] = useState(false);
   const [data, setData] = useState(0);
   const onTestRequest = (d: any) => {
@@ -24,11 +28,9 @@ const HospitalCard = () => {
         />
         <div>
           <h2 className="text-[18px] mb-1 font-poppins font-semibold text-primary">
-            IBNA SINA Diagnostic Center
+            {details.providerOrganizationName}
           </h2>
-          <p className="font-medium text-md text-gray-500">
-            Branch: Dhanmodi Dhaka,1216
-          </p>
+          <p className="font-medium text-md text-gray-500">{details.address}</p>
           <p className="font-medium text-xl text-gray-700">From : 250 tk</p>
           <div className="flex items-center gap-3 mt-4">
             <Button
@@ -39,12 +41,19 @@ const HospitalCard = () => {
               Send Request
             </Button>
 
-            <Button
-              variant="outline"
-              className="flex-1 bg-secondary text-white btn-secondary"
+            <Link
+              href={`${pathname}/${String(details.providerOrganizationName)
+                .split(" ")
+                .join("-")
+                .toLowerCase()}`}
             >
-              Details
-            </Button>
+              <Button
+                variant="outline"
+                className="flex-1 bg-secondary text-white btn-secondary"
+              >
+                Details
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

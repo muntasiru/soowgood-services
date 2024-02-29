@@ -4,8 +4,13 @@ import Container from "@/components/layout/container";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 import HospitalSpecificationTab from "./hospital-specification-tab";
+import { useParams, usePathname } from "next/navigation";
 
 const Page = () => {
+  const { slug } = useParams();
+  const path = usePathname();
+  console.log(path);
+
   return (
     <>
       {" "}
@@ -13,14 +18,12 @@ const Page = () => {
         <PageHeader>
           <div className="text-center ">
             <h1 className=" text-[32px] font-bold text-primary drop-shadow-md">
-              IBNA SINA Diagnostic Center - (Mirpur Branch)
+              {String(slug).split("-").join(" ").toUpperCase()}
             </h1>
             <span className="flex gap-1 items-center justify-center text-primary/80">
               Service
               <ArrowRight size={15} className="mt-1" />
-              Diagnostic center
-              <ArrowRight size={15} className="mt-1" />
-              IBNA SINA Diagnostic Center
+              {path}
             </span>
           </div>
         </PageHeader>

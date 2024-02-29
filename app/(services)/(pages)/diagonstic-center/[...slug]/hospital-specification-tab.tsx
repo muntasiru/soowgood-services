@@ -2,8 +2,12 @@
 
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useParams } from "next/navigation";
 
 const HospitalSpecificationTab = () => {
+  const { slug } = useParams();
+  console.log(slug[0]);
+
   return (
     <Tabs defaultValue="account" className="w-full pb-0 space-y-0 mt-6">
       <CardHeader className="px-0">

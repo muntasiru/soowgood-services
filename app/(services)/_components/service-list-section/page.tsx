@@ -9,8 +9,9 @@ import { PlatformFacilitiModel } from "../../_models/platform-model";
 
 const ServiceListSection = async ({ platform }: any) => {
   return (
-    <div className="max-w-[1340px] mx-auto">
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 px-5 lg:px-0 pb-10 lg:pb-0 lg:grid-cols-6 ">
+    <div className="max-w-[1140px] mx-auto">
+      {/* <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 px-5 lg:px-0 pb-10 lg:pb-0 lg:grid-cols-5 "> */}
+      <div className=" flex gap-6 justify-center">
         {platform?.map((res: PlatformFacilitiModel, i: number) => (
           <ServiceCard
             key={i}
