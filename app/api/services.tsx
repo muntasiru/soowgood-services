@@ -1,5 +1,5 @@
-// const apiUrl = "https://soowgoodbeta.com/api/app";
-const apiUrl = "https://localhost:44339/api/app";
+const apiUrl = "https://soowgoodbeta.com/api/app";
+// const apiUrl = "https://localhost:44339/api/app";
 
 // GET ALL PLATFORM FACILITIEST
 export const getplatformList = async () => {
