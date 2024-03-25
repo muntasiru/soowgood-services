@@ -1,27 +1,20 @@
-import {
-  ArrowLeft,
-  ArrowRight,
-  HomeIcon,
-  LayoutGrid,
-  MoveRightIcon,
-  TableProperties,
-  WorkflowIcon,
-} from "lucide-react";
-import HospitalCard from "./hospital-card";
-import Container from "@/components/layout/container";
-import { Card, CardHeader } from "@/components/ui/card";
-import { Suspense } from "react";
-import { Button } from "@/components/ui/button";
 import { getDiagnosticCenterListByFacilitySlug } from "@/app/api/services";
-import { DiagnosticCenterModel } from "../../_models/platform-model";
+import Container from "@/components/layout/container";
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader } from "@/components/ui/card";
+import { ArrowRight, LayoutGrid, TableProperties } from "lucide-react";
+import { Suspense } from "react";
 import PageHeader from "../../_components/page-header";
+import HospitalCard from "./_components/hospital-card";
 
 const Page = async () => {
   const diagnosticCenterList = await getDiagnosticCenterListByFacilitySlug(
     "diagonstic-center"
   );
+
   return (
     <div className=" bg-slate-100">
+      {/* <SetToken /> */}
       <PageHeader>
         <div className="text-center ">
           <h1 className=" text-[32px] font-bold text-primary drop-shadow-md">
@@ -43,7 +36,7 @@ const Page = async () => {
                   {/* <TotalProjects /> */}
                   <h2 className=" text-[18px] font-semibold text-primary">
                     {" "}
-                    Total hospital : 102
+                    Total hospital : {diagnosticCenterList.length}
                   </h2>
                 </Suspense>
                 <div className="flex items-center gap-5">
@@ -69,8 +62,8 @@ const Page = async () => {
             </CardHeader>
           </Card>
           <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-6 mt-5">
-            {diagnosticCenterList?.map((res: DiagnosticCenterModel) => (
-              <HospitalCard key={res.id} details={res} />
+            {diagnosticCenterList?.map((res: string, index: number) => (
+              <HospitalCard key={index} provider={res} />
             ))}
           </div>
         </Container>

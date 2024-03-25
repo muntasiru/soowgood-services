@@ -5,9 +5,11 @@ import SearchSection from "./_components/search-section";
 import { platform } from "os";
 import { getplatformList } from "../api/services";
 import { PlatformFacilitiModel } from "./_models/platform-model";
+import { Suspense } from "react";
 
 export default async function ServiceHome() {
   let platform = await getplatformList();
+
   return (
     <div className="min-h-screen">
       <Container>
@@ -22,7 +24,9 @@ export default async function ServiceHome() {
           </h1> */}
 
           <Card className=" bg-transparent border-none  shadow-none my-10">
-            <ServiceListSection platform={platform} />
+            <Suspense fallback="Loading...">
+              <ServiceListSection platform={platform} />
+            </Suspense>
           </Card>
         </>
       </Container>
